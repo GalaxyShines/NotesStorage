@@ -92,12 +92,12 @@ function App () {
 
 ### JSX中使用 JS表达式
 
-在JSX中，可以使用 大括号{} 识别JavaScript中的表达式，比如常见的变量、函数调用、方法调用等等
+在JSX中，可以使用 大括号 `{` `}`  识别 JavaScript 中的表达式，比如常见的变量、函数调用、方法调用等等
 
-1. 使用引号传递字符串
-2. 使用JavaScript变量
+1. 使用 **引号** 传递字符串
+2. 使用 JavaScript 变量
 3. 函数调用和方法调用
-4. 使用JavaScript对象
+4. 使用 JavaScript 对象
 
 
 
