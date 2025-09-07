@@ -128,6 +128,50 @@ function App () {
 
 
 
+### JSX 使用 Prop 进行渲染
+
+下面的代码中实现了两个卡片，卡片样式相同，但是内容不同
+
+```jsx
+export default function Profile () {
+    return (
+    	<>
+        	<div className="card-style">
+        		欢迎回来
+        	</div>
+        	<div className="card-style">
+        		<button>点击退出登录</button>
+        	</div>
+        </>
+    )
+}
+```
+
+我们可以将卡片的公共代码提取出来
+
+```jsx
+export function Card ({ children}) {
+    return (
+    	<div className="card-style">
+        	{ children }
+        </div>
+    )
+}
+
+export default function Profile () {
+    <Card>
+    	欢迎回来
+    </Card>
+    <Card>
+    	<button>点击退出登录</button>
+    </Card>
+}
+```
+
+这里的 `children` 可以抽象地类比成 `Vue` 中的 **插槽**
+
+
+
 ### JSX中实现条件渲染
 
 ```react
