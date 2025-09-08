@@ -115,7 +115,7 @@ const list = [
     }
 ]
 
-function App () {
+export default function App () {
     return {
         <ul>
         	{list.map(item => (
@@ -123,6 +123,19 @@ function App () {
             ))}
         </ul>
     }
+}
+
+// 还可以使用 forEach 进行渲染
+export default function App () {
+    const targetList = []
+    list.forEach(item => {
+        targetList.push(<li key="{item.id}">{item.name}</li>)
+    })
+    return (
+    	<ul>
+            {targetList}
+        </ul>
+    )
 }
 ```
 
