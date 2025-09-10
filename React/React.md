@@ -213,7 +213,9 @@ function PersonNum () {
 
 
 
-### React基础事件绑定
+### React事件绑定
+
+#### 基础绑定
 
 用法：on + 事件名称 = { 事件处理程序 }
 
@@ -230,7 +232,7 @@ function App () {
 
 
 
-### React基础事件绑定-使用事件对象参数
+#### 使用事件对象参数
 
 ```react
 function App () {
@@ -245,7 +247,7 @@ function App () {
 
 
 
-### React基础事件绑定-传递自定义参数
+#### 传递自定义参数
 
 ```react
 function App () {
@@ -262,7 +264,7 @@ function App () {
 
 
 
-### React基础事件绑定-传递事件对象参数和自定义参数
+#### 传递事件对象参数和自定义参数
 
 ```react
 function App () {
@@ -274,6 +276,43 @@ function App () {
     )
 }
 ```
+
+
+
+#### 自定义事件
+
+```jsx
+// https://codesandbox.io/p/sandbox/zww7h9
+
+export default function App() {
+  function a1() {
+    alert("a1 alert");
+  }
+
+  function a2() {
+    alert("a2 alert");
+  }
+
+  return (
+    <>
+      <h1>hello world</h1>
+      <MyComp alert1={a1} alert2={a2} />
+    </>
+  );
+}
+
+function MyComp({ alert1, alert2 }) {
+  return (
+    <>
+      <button onClick={() => alert1()}>alert1</button>
+      <button onClick={() => alert2()}>alert2</button>
+    </>
+  );
+}
+
+```
+
+
 
 
 
