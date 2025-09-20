@@ -398,6 +398,36 @@ const handleChangeName = () => {
 
 
 
+### useState 的更新函数
+
+我们已知 useState 的使用方式
+
+```jsx
+function handleClick () {
+    const [num, setNum] = useState(0)
+    setNum(num + 1)
+    setNum(num + 1)
+    setNum(num + 1)
+}
+```
+
+上述 handleClick 调用一次后只会使 num 的值变为 1 （原理参见文档 [React 文档 - state 如同一张快照](https://react.docschina.org/learn/state-as-a-snapshot)）
+
+如果我们希望每次增加 3 ， 可以使用更新函数
+
+实现方法如下
+
+```jsx
+function handleClick () {
+    const [num, setNum] = useState(0)
+    setNum(n => n + 3)  // 这就是更新函数
+}
+```
+
+[React文档 - 把一系列 state 更新加入队列](https://react.docschina.org/learn/queueing-a-series-of-state-updates)
+
+
+
 ### 组件的样式处理
 
 #### 行内样式（不推荐）
